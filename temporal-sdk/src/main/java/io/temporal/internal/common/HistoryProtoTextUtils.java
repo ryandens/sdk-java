@@ -73,9 +73,9 @@ public final class HistoryProtoTextUtils {
         .forEach(
             (d, v) -> {
               String fieldName = d.getName();
-              if (fieldName.equals("input")
-                  || fieldName.equals("result")
-                  || fieldName.equals("details")) {
+              if ("input".equals(fieldName)
+                  || "result".equals(fieldName)
+                  || "details".equals(fieldName)) {
                 result.append(printer.printFieldToString(d, v));
               } else {
                 result.append(printer.shortDebugString(d, v));
