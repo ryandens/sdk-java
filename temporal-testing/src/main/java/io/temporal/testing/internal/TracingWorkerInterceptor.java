@@ -298,7 +298,7 @@ public class TracingWorkerInterceptor implements WorkerInterceptor {
               (args) -> {
                 Object result = input.getCallback().apply(args);
                 if (!WorkflowUnsafe.isReplaying()) {
-                  if (queryType.equals("query")) {
+                  if ("query".equals(queryType)) {
                     log.trace("query", new Throwable());
                   }
                   trace.add("query " + queryType);
